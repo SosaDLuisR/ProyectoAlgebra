@@ -2,6 +2,11 @@
 int main()
 {
 	int f,c,i,j,A[10][10];
+	/*f = fila
+	c= columna
+	i= fila dentro de la matriz
+	j= columna dentro de la matriz
+	A[10][10] = es la dimension del arreglo*/
 	printf("\n\nSolucion de una matriz por metodo de Gauss-Jordan");
 	printf("\nDamos por hecho que sabes que es una matriz aumentada");
 	printf("\nAhora te solicitaremos los datos para que los ingreses, gracias :)");
@@ -25,5 +30,7 @@ int main()
 		printf("\n");
 	}
 	//*fin impresion de matriz*//
+	printf("\nAhora procederemos a escalonar la parte inferior a la diagonal principal");
+	if
 	printf("\n\n");
 }
