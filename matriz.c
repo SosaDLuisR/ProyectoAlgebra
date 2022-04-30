@@ -3,8 +3,8 @@ int main()
 {
 	int f,c,i,j,A[10][10];
 	printf("\n\nSolucion de una matriz por metodo de Gauss-Jordan");
-	printf("\Damos por hecho que sabes que es una matriz aumentada");
-	printf("\Ahora te solicitaremos los datos para que los ingreses, gracias :)");
+	printf("\nDamos por hecho que sabes que es una matriz aumentada");
+	printf("\nAhora te solicitaremos los datos para que los ingreses, gracias :)");
 	printf("\n\nCuantas filas tendra la matriz? ");
 	scanf("%i",&f);
 	printf("\nCuantas columnas tendra la matriz? ");
