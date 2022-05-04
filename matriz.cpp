@@ -9,66 +9,35 @@ using namespace std;
 void imprimir(int f, int c, float * );
 void pivote(int f, int c, float *, float*,float*,int j);
 int definirMatriz();
-
-
-int menu();
-
-	system("color 3F");
-	titulo("SOLUCION DE ECUACIONES LINEALES POR GAUSS-JORDAN");
-cout<<"1.SOLUCION DE ECUACIONES LINEALES POR GAUSS-JORDAN"<<endl;
-cout<<"2.CALCULAR "<<endl;
-cout<<"3.Instrucciones"<<endl;
-cout<<"4.Salir"<<endl;
-cout<<"\nOpcion: ";
-cin>>opc;
-system(CLEAR);
-
-
-void titulo(string title)
-{
-	int i;
-	int val;
-	
-	val = title.length() ;
-	
-	val = val + 20;
-	
-	
-	for(i=0; i<= val; i++)
-	{
-		cout << "*";
-	}
-	
-	cout << "\n \n";
-	
-	for(i=0; i<= val; i++)
-	{
-		cout << " ";
-		if(i==4 )
-		{
-			cout << title;
-		}
-		
-		cout << " ";
-		
-	}
-	
-	cout << "\n";
-	
-	for(i=0; i<= val; i++)
-	{
-		cout << "*";
-	}
-	
-	cout << "\n \n \n";
-	
-}
+int opc;
+void escalonamiento();
+void titulo(string title);
 
 int menu(){
-	system("color 0a");
-	titulo("BIENVENIDO AL PROGRAMA");
-	titulo("Solucion de ecuaciones con guss-jordan");
+
+
+system("color 3F");
+titulo("SOLUCION DE ECUACIONES LINEALES POR GAUSS-JORDAN");
+cout<<"1.SOLUCION DE ECUACIONES LINEALES POR GAUSS-JORDAN"<<endl;
+cout<<"2.CALCULAR MATRIZ INVERSA"<<endl;
+cout<<"3.CREDITOS"<<endl;
+cout<<"4.SALIR"<<endl;
+cout<<"\nOPCION: ";
+cin>>opc;
+system(CLEAR);
+switch(opc){
+
+case 1: definirMatriz();break;
+//case 2: matrizInversa();break;
+//case 3: creditos();break;
+case 4: cout<<"\t\t\tGRACIAS POR SU ATENCION"<<endl;break;
+default: cout<<"COLOQUE UNA OPCION CORRECTA"<<endl;break;
+
 }
+}
+
+
+
 
 
 int definirMatriz(){
@@ -96,11 +65,13 @@ int definirMatriz(){
 			scanf("%f",&matriz[i][j]);
 		}
 	}
+
 	//Matriz Inicial
 	printf("MATRIZ AUMENTADA INICIAL ES: \n");
 	imprimir(f,c,&matriz[0][0]);
-	printf("\n");
-	
+	cout<<"\n";
+	system("Pause");
+	system(CLEAR);
 	//Metodo de gauss-jordan
 	
 	float aux = 0;
@@ -159,6 +130,7 @@ int definirMatriz(){
 	}			
 	  
 }
+
 
 void imprimir(int f, int c, float * matriz)
 {
@@ -233,8 +205,47 @@ void pivote(int f, int c, float *matriz, float *vecPivote, float *vectAuxiliar, 
 		}
 	}
 }
+void titulo(string title)
+{
+	int i;
+	int val;
+	
+	val = title.length() ;
+	
+	val = val + 20;
+	
+	
+	for(i=0; i<= val; i++)
+	{
+		cout << "*";
+	}
+	
+	cout << "\n \n";
+	
+	for(i=0; i<= val; i++)
+	{
+		cout << " ";
+		if(i==4 )
+		{
+			cout << title;
+		}
+		
+		cout << " ";
+		
+	}
+	
+	cout << "\n";
+	
+	for(i=0; i<= val; i++)
+	{
+		cout << "*";
+	}
+	
+	cout << "\n \n \n";
+	
+}
 main()
 { 	
-	 
+	 menu();
 }
 	
