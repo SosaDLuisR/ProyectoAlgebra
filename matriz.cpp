@@ -45,7 +45,9 @@ int menu()
 		titulo("GRACIAS POR SU ATENCION");
 		break;
 	default:
-		titulo("GRACIAS POR SU ATENCION");
+		titulo("ERROR , INGRESE UNA OPCION CORRECTA");
+		system("pause");
+		system(CLEAR);
 		menu();
 		break;
 	}
@@ -111,7 +113,7 @@ int definirMatriz()
 			if (i != j && j < c - 1) // decimos que cuando i es diferente de j , no estamos en la diagonal
 			// entonces tenmos que redurcirlo a 0. Tambien si no nos encontramos en la columna de resultados
 			{
-				n = matriz[i][j]; // se asigna n al elemento que no esta en la diagonal principla
+				n = matriz[i][j]; // se asigna n al elemento que no esta en la diagonal principal
 			}
 
 			//
@@ -120,6 +122,7 @@ int definirMatriz()
 				// realizamos la siguiente operacion para hacer 0 a los elementos por debajo
 				// de la diagonal
 				matriz[i][k] = (-1 * n * vecPivote[k]) + matriz[i][k];
+			                  //2=-1(2)(1)+2
 			}
 
 			if (i == j)
@@ -139,20 +142,20 @@ int definirMatriz()
 			cout << ("\n");
 			system("pause");
 		}
-		// cout<<"Matriz escalonada";
-		//	imprimir(f,c,&matriz[0][0]);
+		
 
-		// Se limpia la fila pivote para evitar arrastrar basura al igual que n
+	//Volvemos a inicializar a 0 el pivote al igual que la variable n
+	//Esto para que no nos afecte en el ciclo
 		n = 0;
 		for (int k = 0; k < c; k++)
 		{
 			vecPivote[k] = 0;
 		}
-		// cout<<"Matriz escalonada";
-		//	imprimir(f,c,&matriz[0][0]);
+		
 	}
 	titulo("Matriz Escalonada:");
 	imprimir(f, c, &matriz[0][0]);
+	cout << ("\n");
 	system("pause");
 	system(CLEAR);
 	menu();
@@ -196,7 +199,7 @@ void pivote(int f, int c, float *matriz, float *vecPivote, float *vectAuxiliar, 
 			sumi++;
 		}
 	}
-
+//ciclo para que recorre la matriz para encontrar la diagonal y hacerla 1 para pivotear con ella
 	for (int i = 0; i < f; i++)
 	{
 		if (i == j)
@@ -271,8 +274,8 @@ int creditos()
 	string profesor = "Gerardo Gonzalez Hernandez";
 	string nombre1 = "-Luis Ruben Sosa Delgadillo";
 	string nombre2 = "-Ezequiel Olivera Reyes";
-	string nombre3 = "-Jorge �ngel Jim�nez Sandoval";
-	string nombre4 = "-Josu� Hern�ndez Rosas";
+	string nombre3 = "-Jorge Angel Jimenez Sandoval";
+	string nombre4 = "-Josua Hernandez Rosas";
 	string nombre5 = "-Giovanna Daiana Escutia Silva";
 
 	cout << "Profesor: " << profesor << "\n";
@@ -342,16 +345,19 @@ matrizInversa()
 			{				   // no estamos en la diagonal
 				aux = A[j][i]; // El aux es el numero que quiero convertir a 0
 				for (k = 0; k < n; k++)
-				{ // ciclo para aplicar el proceso en todo la fial
+				{ // ciclo para aplicar el proceso en todos los elementos que no sean i==j
 
 					// operacion para reducir a 0 los elemetos
-					A[j][k] = A[j][k] - aux * A[i][k];
+					A[j][k] = A[j][k] - aux * A[i][k]; //A[I][K] PIVOTE
+					//4=4-4*1=0
+					//se aplica tambien sobre la matriz identidad
 					I[j][k] = I[j][k] - aux * I[i][k];
+					
 				}
 			}
 		}
 	}
-	printf("\n\nLa matriz inversa es:");
+	printf("\n\nMatriz identidad:         |Matriz inversa:  ");
 	for (i = 0; i < n; i++)
 		for (j = 0; j < n; j++)
 		{
